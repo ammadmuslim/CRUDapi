@@ -1,7 +1,9 @@
 const Product = require('../models/product.model');
 
 exports.test = (req,res)=>{
-	res.send('Greetings frm rouete');
+	Product.find((err, product)=>{
+		res.send(product);
+	})
 }
 
 exports.product_create = (req,res)=>{
